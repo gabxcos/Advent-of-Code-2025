@@ -1,7 +1,9 @@
 from inputs.test.solutions import test_solutions
 from utils.puzzle_reader import puzzle_read
+
 from datetime import timedelta
 import time
+import logging
 
 class BaseSolver:
     def __init__(self, day: int = -1, raw: bool = True, skip_test: bool = False, elapsed: bool = True, debug: bool = False):
@@ -14,6 +16,12 @@ class BaseSolver:
         self.test_data = puzzle_read(day_string=self.day_string, test=True)
         self.test_solutions = test_solutions.get(self.day_string, [None, None])
         self.data = puzzle_read(self.day_string)
+        self.logger = logging.getLogger(__name__)
+        self.logger.setLevel(logging.DEBUG if self.debug else logging.INFO)
+        handler = logging.StreamHandler()
+        handler.setFormatter(logging.Formatter('%(message)s'))  # just message
+        self.logger.handlers.clear()            # remove any default handlers
+        self.logger.addHandler(handler)
 
     def test(self, part: int = 1):
         func = getattr(self, f"part_{part}")
