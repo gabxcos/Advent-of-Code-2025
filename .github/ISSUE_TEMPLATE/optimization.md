@@ -1,6 +1,6 @@
 ---
 name: Optimization
-about: Present a new optimal solution for a given day of AoC 2024
+about: Present a new optimal solution for a given day of AoC 2025
 title: "[OPTIMAL] Day 01 Parts 1-2"
 labels: optimization
 assignees: ''

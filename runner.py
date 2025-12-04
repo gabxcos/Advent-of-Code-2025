@@ -30,7 +30,7 @@ def solve_all(optimal: bool = False, skip_test: bool = False, elapsed: bool = Tr
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Bulk runner of gabxcos' Advent of Code 2024 solutions")
+    parser = argparse.ArgumentParser(description="Bulk runner of gabxcos' Advent of Code 2025 solutions")
     parser.add_argument("-d", "--day", dest="day", default=_today, metavar="day_number", type=int, help="Required, day number of the AoC event")
     parser.add_argument("-p", "--part", dest="part", default=1, metavar="part_number", type=int, help="Required, part number of the day of the AoC event")
     parser.add_argument("--optimal", action="store_true", help="Optional, use the intended optimal solution instead of the one I actually came up with")

@@ -1,14 +1,14 @@
-# Advent of Code 2024
+# Advent of Code 2025
 
-*(This repository's structure and the base classes and utils functions were heavily inspired by [nitekat1124](https://github.com/nitekat1124/advent-of-code-2024)'s, all rights reserved.
+*(This repository's structure and the base classes and utils functions are a fork of [my 2024 repo](https://github.com/gabxcos/Advent-of-Code-2024) and were heavily inspired by [nitekat1124](https://github.com/nitekat1124/advent-of-code-2024)'s, all rights reserved.
 The solutions implemented in the `solutions/naive` folder I came up with without looking at other people's code.)*
 
-My personal solutions to [Advent of Code 2024](https://adventofcode.com/2024/), implemented in Python 3.
+My personal solutions to [Advent of Code 2025](https://adventofcode.com/2025/), implemented in Python 3.
 
 ## Solutions
 
-![](https://img.shields.io/badge/days_completed_📅-20-blue)
-![](https://img.shields.io/badge/stars_⭐-40-yellow)
+![](https://img.shields.io/badge/days_completed_📅-0-blue)
+![](https://img.shields.io/badge/stars_⭐-0-yellow)
 ![](https://img.shields.io/badge/half_stars_🌗-0-white)
 
 For each day, a single ⭐ is listed if only the first part of the puzzle was solved, and both ⭐⭐ if both parts are solved correctly.
@@ -16,26 +16,7 @@ A 🌠 signifies that consulting external resources was required in order to sol
 
 | Day | Naive Solutions | Optimal Solutions |
 |-----|:---------------:|:-----------------:|
-| 01  |        ⭐⭐       |         ⭐⭐        |
-| 02  |        ⭐⭐       |         --        |
-| 03  |        ⭐⭐       |         --        |
-| 04  |        ⭐⭐       |         --        |
-| 05  |        ⭐⭐       |         --        |
-| 06  |        ⭐⭐       |         --        |
-| 07  |        ⭐⭐       |         --        |
-| 08  |        ⭐⭐       |         --        |
-| 09  |        ⭐⭐       |         --        |
-| 10  |        ⭐⭐       |         --        |
-| 11  |        ⭐⭐       |         --        |
-| 12  |        ⭐🌠       |         --        |
-| 13  |        ⭐⭐       |         --        |
-| 14  |        ⭐⭐       |         --        |
-| 15  |        ⭐⭐       |         --        |
-| 16  |        ⭐⭐       |         --        |
-| 17  |        ⭐⭐       |         --        |
-| 18  |        ⭐⭐       |         --        |
-| 19  |        ⭐⭐       |         ⭐⭐        |
-| 20  |        ⭐⭐       |         --        |
+| 01  |        --       |         --        |
 
 ### What is the difference between "naive" and "optimal" solutions?
 
@@ -60,7 +41,7 @@ This is the general usage helper, provided by Python's `argparse`:
 ```
 usage: runner.py [-h] [-d day_number] [-p part_number] [--optimal] [--skip-test] [--no-elapsed] [--run-all]
 
-Bulk runner of gabxcos' Advent of Code 2024 solutions
+Bulk runner of gabxcos' Advent of Code 2025 solutions
 
 options:
   -h, --help            show this help message and exit
