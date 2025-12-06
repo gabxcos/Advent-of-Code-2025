@@ -18,6 +18,7 @@ A 🌠 signifies that consulting external resources was required in order to sol
 |-----|:---------------:|:-----------------:|
 | 01  |        ⭐⭐       |         --        |
 | 02  |        ⭐⭐       |         --        |
+| 03  |        ⭐-       |         --        |
 
 ### What is the difference between "naive" and "optimal" solutions?
 
