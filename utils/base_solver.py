@@ -16,12 +16,18 @@ class BaseSolver:
         self.test_data = puzzle_read(day_string=self.day_string, test=True)
         self.test_solutions = test_solutions.get(self.day_string, [None, None])
         self.data = puzzle_read(self.day_string)
+        self._init_logger()
+
+    def _init_logger(self):
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(logging.DEBUG if self.debug else logging.INFO)
-        handler = logging.StreamHandler()
-        handler.setFormatter(logging.Formatter('%(message)s'))  # just message
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(logging.Formatter('%(message)s'))  # just message
+        file_handler = logging.FileHandler("debug.log", mode='w', encoding='utf-8')
+        file_handler.setFormatter(logging.Formatter('%(message)s'))
         self.logger.handlers.clear()            # remove any default handlers
-        self.logger.addHandler(handler)
+        self.logger.addHandler(console_handler)
+        self.logger.addHandler(file_handler)
 
     def test(self, part: int = 1):
         func = getattr(self, f"part_{part}")
