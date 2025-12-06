@@ -19,6 +19,44 @@ def solve_bank(bank: list[int]) -> int:
                 continue
     raise Exception("No joltage was computed")
 
+def solve_bank_overcharged(bank: list[int]) -> int:
+    digits = sorted(set(bank), reverse=True)
+    bank_len = len(bank)
+    for i in range(len(digits)-1):
+        # Initialize first digit
+        res_arr = []
+        pos_arr = []
+        a = digits[i]
+        pos_a = bank.index(a)
+        if pos_a > (bank_len - 12):
+            continue
+        res_arr.append(a)
+        pos_arr.append(pos_a)
+        
+        # Repeat for following 11
+        for _ in range(11):
+            found_val = None
+            found_pos = None
+            for j in range(len(digits)):
+                b = digits[j]
+                try:
+                    pos_b = bank[pos_arr[-1]+1:].index(b) + pos_arr[-1]+1
+                    if pos_b > (bank_len - 12 + len(res_arr)):
+                        continue
+                    found_val = b
+                    found_pos = pos_b
+                    break
+                except ValueError:
+                    continue
+            if found_val is None:
+                break
+            res_arr.append(found_val)
+            pos_arr.append(found_pos)
+        
+        if len(res_arr)==12:
+            return int("".join([str(el) for el in res_arr]))
+    raise Exception("No joltage was computed")
+
 
 class Solver(BaseSolver):
     def __init__(self, skip_test: bool = False, elapsed: bool = True, debug: bool = False):
@@ -36,4 +74,10 @@ class Solver(BaseSolver):
         return s
     
     def part_2(self, data):
-        pass
+        s = 0
+        for bank in data:
+            str_bank = "".join([str(el) for el in bank])
+            jolt = solve_bank_overcharged(bank=bank)
+            self.logger.debug(f"Bank {str_bank} -> Jolt {jolt}")
+            s+=jolt
+        return s
