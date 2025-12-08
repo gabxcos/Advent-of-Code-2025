@@ -7,8 +7,8 @@ My personal solutions to [Advent of Code 2025](https://adventofcode.com/2025/), 
 
 ## Solutions
 
-![](https://img.shields.io/badge/days_completed_📅-7-blue)
-![](https://img.shields.io/badge/stars_⭐-14-yellow)
+![](https://img.shields.io/badge/days_completed_📅-8-blue)
+![](https://img.shields.io/badge/stars_⭐-16-yellow)
 ![](https://img.shields.io/badge/half_stars_🌗-0-white)
 
 For each day, a single ⭐ is listed if only the first part of the puzzle was solved, and both ⭐⭐ if both parts are solved correctly.
@@ -23,6 +23,7 @@ A 🌠 signifies that consulting external resources was required in order to sol
 | 05  |        ⭐⭐       |         --        |
 | 06  |        ⭐⭐       |         --        |
 | 07  |        ⭐⭐       |         --        |
+| 08  |        ⭐⭐       |         --        |
 
 ### What is the difference between "naive" and "optimal" solutions?
 
