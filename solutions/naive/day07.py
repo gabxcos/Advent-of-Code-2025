@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 from utils.base_solver import BaseSolver
 from utils.puzzle_reader import BaseLinesSplitter
 
@@ -8,14 +10,6 @@ class TachyonSplitter(BaseLinesSplitter):
             set([i for i,x in enumerate(list(line)) if x=="^"]) for line in self.lines[1:]
         ]
         return {"initial_pos": initial_pos, "splitters": splitters_pos_setlist}
-
-# utils for dict
-def upsert(dict, key, value):
-    if key in dict:
-        dict[key] += value
-    else:
-        dict[key] = value
-    return dict
 
 class Solver(BaseSolver):
     def __init__(self, skip_test: bool = False, elapsed: bool = True, debug: bool = False):
@@ -56,17 +50,17 @@ class Solver(BaseSolver):
         for i,split in enumerate(splitters):
             self.logger.debug(f"Advancing to level {i+1}:")
             
-            new_timelines = dict()
+            new_timelines = defaultdict(int)
             for pos, count in timelines.items():
                 if pos in split:
                     self.logger.debug("\tFound a splitter for tachyon pos. "+str(pos)+" in "+str(count)+" timelines.")
                     # left possibility
-                    new_timelines = upsert(new_timelines, pos-1, count)
+                    new_timelines[pos-1] += count
                     # right possibility
-                    new_timelines = upsert(new_timelines, pos+1, count)
+                    new_timelines[pos+1] += count
                 else:
                     self.logger.debug("\tNo splitters encountered for tachyon pos. "+str(pos)+" in "+str(count)+" timelines.")
-                    new_timelines = upsert(new_timelines, pos, count)
+                    new_timelines[pos] += count
             timelines = new_timelines
             self.logger.debug(f"There are now {sum(list(timelines.values()))} timelines.")
             self.logger.debug("-"*20)
