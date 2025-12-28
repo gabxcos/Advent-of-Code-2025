@@ -7,8 +7,8 @@ My personal solutions to [Advent of Code 2025](https://adventofcode.com/2025/), 
 
 ## Solutions
 
-![](https://img.shields.io/badge/days_completed_📅-10-blue)
-![](https://img.shields.io/badge/stars_⭐-20-yellow)
+![](https://img.shields.io/badge/days_completed_📅-11-blue)
+![](https://img.shields.io/badge/stars_⭐-22-yellow)
 ![](https://img.shields.io/badge/half_stars_🌗-0-white)
 
 For each day, a single ⭐ is listed if only the first part of the puzzle was solved, and both ⭐⭐ if both parts are solved correctly.
@@ -26,6 +26,7 @@ A 🌠 signifies that consulting external resources was required in order to sol
 | 08  |        ⭐⭐       |         --        |
 | 09  |        ⭐⭐       |         --        |
 | 10  |        ⭐⭐       |         --        |
+| 11  |        ⭐⭐       |         --        |
 
 ### What is the difference between "naive" and "optimal" solutions?
 
@@ -42,6 +43,10 @@ Both folder have a dedicated `README.md` with some personal commentary on specif
 For each day you intend to test my solutions against, you need to provide manually the puzzle inputs (see why [here](https://www.reddit.com/r/adventofcode/comments/zdz8qa/license_of_the_input_data/)).
 
 In order to do so, the plaintext of the sample input and of your personal input need to be put respectively in two distinct files, in `inputs/test/09` and `inputs/puzzle/09` assuming you're testing just day 9 (in general, the file name is the zero-fill at two positions of a given day).
+
+### Requirements
+
+Some days' solutions require the usage of external libraries (i.e. day 10 with PuLP) - please install from the provided `requirements.txt` in the root of this repository.
 
 ### Usage
 
